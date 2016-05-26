@@ -12,12 +12,12 @@ import br.projeto.view.JanelaPrincipal;
 
 public class ControllerPrincipal {
 	
-	/*A principal funÁ„o desse Controller È abrir outros Controllers de outras janelas
-	 * e no caso do "btnPedidoRapido, carregar alguns valores ‡ janela, quando a mesma abrir [linha 53]*/
+	/*A principal fun√ß√£o desse Controller √© abrir outros Controllers de outras janelas
+	 * e no caso do "btnPedidoRapido, carregar alguns valores √† janela, quando a mesma abrir [linha 53]*/
 	
 	JanelaPrincipal form;
 	ControllerPedidoRapido formPedido;
-	Cliente c = new Cliente(); //Foi criado esse cliente apenas para uma validaÁ„o [linha 45]
+	Cliente c = new Cliente(); //Foi criado esse cliente apenas para uma valida√ß√£o [linha 45]
 	static Caixa caixa = new Caixa();
 	
 	public ControllerPrincipal() {
@@ -35,29 +35,13 @@ public class ControllerPrincipal {
 		});
 		
 		form.btnPedidoRapido.addActionListener(new ActionListener() {
-			/*A principal funÁ„o desse mÈtodo È chamar a Janela de Pedido apenas
-			 * se o cliente j· for cadastrado, se for, ele abre j· setando os dados
-			 * do cliente no topo da janela, caso contr·rio, ele n„o abrir· a janela*/
+			/*A principal fun√ß√£o desse m√©todo √© chamar a Janela de Pedido apenas
+			 * se o cliente j√° for cadastrado, se for, ele abre j√° setando os dados
+			 * do cliente no topo da janela, caso contr√°rio, ele n√£o abrir√° a janela*/
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				String nome = JOptionPane.showInputDialog("Digite o nome do cliente :");
-				c.setNome(nome);
-				for (int i = 0; i < ControllerCadastro.clienteDB.size(); i++) {
-				/*Nesse caso, o "for" substitui o "contains" do ArrayList pois nÛs precisaremos pegar certos
-				 * dados desse objeto, como nome, EndereÁo e cpf. Coisa que seria impossivel com o "contains",
-				 * j· que o mesmo retorna um boolean, e n„o um objeto ... */
-					
-					if(c.equals(ControllerCadastro.clienteDB.get(i))){ 
-						/*[Resolver] Por razıes desconhecidas, quando o usu·rio clica em cancelar na janela do JOptionPane
-						 * O programa acusa NullPointerException na condiÁ„o acima, e na linha 51 da classe modelo Cliente
-						 * o que n„o faz sentido, pois todos os objetos usados s„o instanciados ... */
-						formPedido = new ControllerPedidoRapido();
-						ControllerPedidoRapido.form.lblNome.setText(nome);
-						ControllerPedidoRapido.form.lblEnd.setText(ControllerCadastro.clienteDB.get(i).getEndereco());
-						ControllerPedidoRapido.form.lblTel.setText(ControllerCadastro.clienteDB.get(i).getTelefone());
-					}
-				}	
+				new ControllerValidacao();
 			}
 		});
 		
@@ -70,7 +54,7 @@ public class ControllerPrincipal {
 		});
 		
 		form.btnAvancado.addActionListener(new ActionListener() {	
-			/*Chamar janela onde est„o alguns registros e a opÁ„o de zerar os registros*/
+			/*Chamar janela onde est√£o alguns registros e a op√ß√£o de zerar os registros*/
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				new ControllerJanelaAvancado();
