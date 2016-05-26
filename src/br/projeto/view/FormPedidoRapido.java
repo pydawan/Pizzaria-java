@@ -17,9 +17,9 @@ import br.projeto.model.*;
 
 public class FormPedidoRapido extends JFrame {
 	
-	/*Essa classe È uma das mais importantes para o programa
-	 * Sua funÁ„o È exibir o valor dos itens na tela e armazenar numa vari·vel 
-	 * do cliente atravÈs de seu controller respectivo
+	/*Essa classe √© uma das mais importantes para o programa
+	 * Sua fun√ß√£o √© exibir o valor dos itens na tela e armazenar numa vari√°vel 
+	 * do cliente atrav√©s de seu controller respectivo
 	 * 
 	 * Classe Vinculada: ControllerPedidoRapido*/
 	
@@ -43,7 +43,7 @@ public class FormPedidoRapido extends JFrame {
 	public FormPedidoRapido() {
 		
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setTitle("Pedido R·pido");
+		setTitle("Pedido R√°pido");
 		
 		iniciarTela();
 		iniciarEventos();
@@ -51,7 +51,7 @@ public class FormPedidoRapido extends JFrame {
 		setSize(620, 320);
 		setResizable(false);
 		this.setLocationRelativeTo(null);
-		setVisible(true);
+		setVisible(false);
 	}
 	
 	private void iniciarTela(){
@@ -125,7 +125,7 @@ public class FormPedidoRapido extends JFrame {
 		chkVip.setForeground(new Color(224,255,255));
 		add(chkVip);
 		
-		lblPrecoTotal = new JLabel("Total ‡ pagar :"); //PreÁo Total
+		lblPrecoTotal = new JLabel("Total √† pagar :"); //Pre√ßo Total
 		lblPrecoTotal.setBounds(300, 150, 150, 20);
 		lblPrecoTotal.setForeground(new Color(224,255,255));
 		add(lblPrecoTotal);
