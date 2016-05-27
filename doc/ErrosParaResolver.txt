@@ -1,9 +1,0 @@
-Neste projeto, temos um erro que não achei a solução:
-
-O Erro ocorre quando o usuário clica no botão "Pedido Rápido" e ao abrir a janela do JOptionPane para 
-a validação se o cliente já existe (esse processo se faz com o "equals", que passou por uma sobrescrita para comparar 
-apenas nomes do objeto (Cliente)), porém se usuário quiser clicar no botão "cancelar" da janela do JOption, o programa
-acusa o erro de NullPointerException, nas classes Cliente (linha 51) e ControllerPrincipal (linha 51), porém achei 
-estranho, pois eu instancio todos os objetos antes da comparação. Esse erro só ocorre quando já há algum cliente cadastrado,
-caso contrário, a janela fecha normalmente.
- 
