@@ -13,6 +13,8 @@ public class ControllerPrincipal {
 	JanelaPrincipal form;
 	ControllerPedidoRapido formPedido;
 	static Caixa caixa = new Caixa();
+	/*O objeto caixa é estático pois ele vai somar todos os valores pagos pelos clientes
+	 * portanto, ele tem que estar sempre em execução*/
 	
 	public ControllerPrincipal() {
 		form = new JanelaPrincipal();
