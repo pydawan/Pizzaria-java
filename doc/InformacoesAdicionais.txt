@@ -1,0 +1,32 @@
+Esse projeto simula um sistema de pizzaria numa versão desktop, ou seja, utilizando um ArrayList como "Banco de Dados".
+Ao programador que deseja participar desse projeto, utilize a arquitetura MVC, e leia atentamente o texto abaixo.
+
+Grande parte das ideias desse projeto já foram implementadas no mesmo, porém ainda há algumas adições para levar em conta:
+
+- Exibir mensagem, conforme o erro, nas janelas de validação, que no caso, são os controllers "ControllerValidacao" e 
+"ControllerCadastro";
+
+- Adição de Barra de pesquisa de clientes no JFrame "JanelaGridCliente";
+
+- Adição de ícones nos botões da classe "JanelaPrincipal";
+
+- Eliminar comentários desnecessários;
+
+- Exigir um mínimo de caracteres nos campos de nome e endereço;
+
+- Adicionar o campo de número da casa (endereço).
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Cores padrão do projeto :
+
+Cor de fundo das janelas:
+- DodgerBlue (30,144,255)
+
+Cor de fundo dos botões e campos de texto:
+- AliceBlue (240,248,255)
+
+Cores de labels:
+- AliceBlue (240,248,255)
+- DimGray (105,105,105)
+- MidnightBlue (25,25,112)
