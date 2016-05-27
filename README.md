@@ -1,3 +1,4 @@
 # Pizzaria
-# Projeto que simula um sistema de uma pizzaria, feito em Java (Swing)
-Leia o arquivo texto da pasta doc para tentar me ajudar a resolver os problemas do projeto
+Projeto que simula um sistema de uma pizzaria, feito em Java (Swing)
+Para maiores informações sobre o projeto, consulte o arquivo .txt "InformacoesAdicionais".
+
