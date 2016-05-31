@@ -9,15 +9,20 @@ import br.projeto.model.Cliente;
 import br.projeto.view.FormDetCliente;
 
 public class ControllerDetCliente {
+	/**
+	 * @author Daniel
+	 * @see FormDetCliente
+	 * 
+	 * Essa classe √© responsavel pela edi√ß√£o dos dados de um funcion√°rio j√° existente
+	 * onde o ControllerGridCliente chamar√° esta classe passando o cliente selecionado
+	 * 
+	 * O layout do form dessa classe √© id√™ntico ao do cadastro, s√≥ muda o texto de um bot√£o
+	 * Classe Vinculada : FormDetCliente*/
+	
 	FormDetCliente form;
 	Cliente c;
 	
 	public ControllerDetCliente(Cliente cliente) {
-		/*Essa classe È responsavel pela ediÁ„o dos dados de um funcion·rio j· existente
-		 * onde o ControllerGridCliente chamar· esta classe passando o cliente selecionado
-		 * 
-		 * O layout do form dessa classe È idÍntico ao do cadastro, sÛ muda o texto de um bot„o
-		 * Classe Vinculada : FormDetCliente*/
 		
 		c = new Cliente();
 		c = cliente;
@@ -37,7 +42,7 @@ public class ControllerDetCliente {
 		form.btnOk.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				/*Verificar se n„o h· nehum campo vazio ou nulo, para evitar armazenamento de dados nulos no cadastro*/
+				/*Verificar se n√£o h√° nehum campo vazio ou nulo, para evitar armazenamento de dados nulos no cadastro*/
 				if ((form.txtNome.getText() == null || form.txtNome.getText().trim().isEmpty()) ||
 						(form.txtEnd.getText() == null || form.txtEnd.getText().trim().isEmpty()) ||
 						(form.txtTel.getText() == null || form.txtTel.getText().trim().isEmpty())) {
@@ -49,12 +54,12 @@ public class ControllerDetCliente {
 		});
 	}
 	
-	private void initEvents(){ //Esse mÈtodo sÛ ser· chamado se os dados n„o forem nulos
+	private void initEvents(){ //Esse m√©todo s√≥ ser√° chamado se os dados n√£o forem nulos
 		c.setNome(form.txtNome.getText());
 		c.setEndereco(form.txtEnd.getText());
 		c.setTelefone(form.txtTel.getText());
 		form.setVisible(false);
-		JOptionPane.showMessageDialog(null, "EdiÁ„o concluida !");
+		JOptionPane.showMessageDialog(null, "Edi√ß√£o concluida !");
 	}
 
 }
