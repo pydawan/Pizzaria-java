@@ -19,7 +19,12 @@ import br.projeto.view.FormPedidoRapido;
 
 public class ControllerPedidoRapido {
 	
-	/*Um dos principais controllers do projeto
+	/**
+	 * @author Daniel
+	 * @see FormPedidoRapido
+	 * @see Cliente
+	 * 
+	 * Um dos principais controllers do projeto
 	 * Só abrirá se já tiver um cliente cadastrado no sistema e se seu
 	 * nome for digitado da maneira correta
 	 * 
@@ -60,9 +65,8 @@ public class ControllerPedidoRapido {
 
 	
 	private void iniciarEventos(){ //Apresentar valor do item	
-		//Se você tem amor a sua vida, nunca mais toque em nada desse método
 		
-		form.cmbPizza.addItemListener(new ItemListener() {	
+		form.cmbPizza.addItemListener(new ItemListener() { //Carregar label com o preço do item selecionado no enum
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if(e.getStateChange() == ItemEvent.SELECTED){
@@ -74,7 +78,7 @@ public class ControllerPedidoRapido {
 			}
 		});
 		
-		form.cmbSuco.addItemListener(new ItemListener() {
+		form.cmbSuco.addItemListener(new ItemListener() { //Carregar label com o preço do item selecionado no enum
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if(e.getStateChange() == ItemEvent.SELECTED){
@@ -85,7 +89,7 @@ public class ControllerPedidoRapido {
 			}
 		});
 		
-		form.cmbRefri.addItemListener(new ItemListener() {	
+		form.cmbRefri.addItemListener(new ItemListener() { //Carregar label com o preço do item selecionado no enum
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if(e.getStateChange() == ItemEvent.SELECTED){
@@ -109,7 +113,7 @@ public class ControllerPedidoRapido {
 				
 				form.txtPrecoTotal.setText(formatoMonetario.format(precoSoma));
 				
-				if(form.chkVip.isSelected()){
+				if(form.chkVip.isSelected()){ //Desconto de 15% para clientes vips
 					double desconto = (precoSoma)*0.15;
 					precoSoma -= desconto;
 					form.txtPrecoTotal.setText(formatoMonetario.format(precoSoma));
@@ -118,7 +122,7 @@ public class ControllerPedidoRapido {
 			}
 		});
 		
-		form.btnConfirmar.addActionListener(new ActionListener() {
+		form.btnConfirmar.addActionListener(new ActionListener() { //Confirmar pedido
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				ControllerPrincipal.caixa.setPrecoTotal(ControllerPrincipal.caixa.getPrecoTotal() +
