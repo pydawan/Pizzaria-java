@@ -1,29 +1,29 @@
-Esse projeto simula um sistema de pizzaria numa vers„o desktop, ou seja, utilizando um ArrayList como "Banco de Dados".
-Ao programador que deseja participar desse projeto, utilize a arquitetura MVC, e leia atentamente o texto abaixo.
+Esse projeto simula um sistema de pizzaria numa vers√£o desktop, ou seja, utilizando um ArrayList como "Banco de Dados".
+√Ä pessoa que deseja testar esse programa, √© bom ressaltar que o mesmo s√≥ poder√° desfrutar de todas as fun√ß√µes do programa se houver um cliente cadastrado. Ao programador que deseja me ajudar no projeto, utilize a arquitetura MVC, e leia atentamente o texto abaixo.
 
-Grande parte das ideias desse projeto j· foram implementadas no mesmo, porÈm ainda h· algumas adiÁıes para levar em conta:
+Grande parte das ideias desse projeto j√° foram implementadas no mesmo, por√©m ainda h√° algumas adi√ß√µes para levar em conta:
 
-- Exibir mensagem, conforme o erro, nas janelas de validaÁ„o, que no caso, s„o os controllers "ControllerValidacao" e 
+- Exibir mensagem, conforme o erro, nas janelas de valida√ß√£o, que no caso, s√£o os controllers "ControllerValidacao" e 
 "ControllerCadastro";
 
-- AdiÁ„o de Barra de pesquisa de clientes no JFrame "JanelaGridCliente";
+- Adi√ß√£o de Barra de pesquisa de clientes no JFrame "JanelaGridCliente";
 
-- AdiÁ„o de Ìcones nos botıes da classe "JanelaPrincipal";
+- Adi√ß√£o de √≠cones nos bot√µes da classe "JanelaPrincipal";
 
-- Eliminar coment·rios desnecess·rios;
+- Eliminar coment√°rios desnecess√°rios;
 
-- Exigir um mÌnimo de caracteres nos campos de nome e endereÁo;
+- Exigir um m√≠nimo de caracteres nos campos de nome e endere√ßo;
 
-- Adicionar o campo de n˙mero da casa (endereÁo).
+- Adicionar o campo de n√∫mero da casa (endere√ßo).
 
 --------------------------------------------------------------------------------------------------------------------------
 
-Cores padr„o do projeto :
+Cores padr√£o do projeto :
 
 Cor de fundo das janelas:
 - DodgerBlue (30,144,255)
 
-Cor de fundo dos botıes e campos de texto:
+Cor de fundo dos bot√µes e campos de texto:
 - AliceBlue (240,248,255)
 
 Cores de labels:
