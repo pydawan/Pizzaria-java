@@ -11,9 +11,13 @@ import br.projeto.view.FormCadastroCliente;
 
 public class ControllerCadastro {
 	
-	/*A funÁ„o dessa classe È pegar os valores que estiverem dentro dos campos de seu from respectivo
-	 * e armazenar ele em vari·veis de um objeto, sob as condiÁıes dos campos n„o estarem nulos e
-	 * do cliente j· existir*/
+	/**
+	 * @author Daniel
+	 * @see FormCadastroCliente
+	 * 
+	 * A fun√ß√£o dessa classe √© pegar os valores que estiverem dentro dos campos de seu from respectivo
+	 * e armazenar ele em vari√°veis de um objeto, sob as condi√ß√µes dos campos n√£o estarem nulos e
+	 * do cliente j√° existir*/
 	
 	FormCadastroCliente form;
 	Cliente c;
@@ -25,16 +29,17 @@ public class ControllerCadastro {
 	}
 	
 	private void validacaoDeClienteExistente (){ 
-		/*Verificar se j· n„o h· clientes cadastrados no programa
-		 * Esse programa possui uma sobrescrita do mÈtodo "equals" onde
-		 * compara-se apenas o nome, e n„o o objeto inteiro*/ 
+		/*Verificar se j√° n√£o h√° clientes cadastrados no programa
+		 * Esse programa possui uma sobrescrita do m√©todo "equals" onde
+		 * compara-se apenas o nome, e n√£o o objeto inteiro*/ 
+		
 		form.btnCadastrar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				c = new Cliente();
 				c.setNome(form.txtNome.getText());
 					if(clienteDB.contains(c)){
-						JOptionPane.showMessageDialog(null, "Cliente j· existe !");
+						JOptionPane.showMessageDialog(null, "Cliente j√° existe !");
 					}else{
 						validacaoDeCamposNulos();
 					}
@@ -43,7 +48,7 @@ public class ControllerCadastro {
 	}
 	
 	private void validacaoDeCamposNulos(){
-        /*Verificar se n„o h· nehum campo vazio ou nulo, para evitar armazenamento de dados nulos no cadastro*/
+        /*Verificar se n√£o h√° nehum campo vazio ou nulo, para evitar armazenamento de dados nulos no cadastro*/
                 if ((form.txtNome.getText() == null || form.txtNome.getText().trim().isEmpty()) ||
                         (form.txtEnd.getText() == null || form.txtEnd.getText().trim().isEmpty()) ||
                         (form.txtTel.getText() == null || form.txtTel.getText().trim().length() != 13))
@@ -56,7 +61,7 @@ public class ControllerCadastro {
 		 
 	
 	private void eventosForm(){
-		/*MÈtodo que sÛ ser· chamado depois das validaÁıes*/
+		/*M√©todo que s√≥ ser√° chamado depois das valida√ß√µes*/
 				Cliente cliente = new Cliente();
 				cliente.setNome(form.txtNome.getText());
 				cliente.setEndereco(form.txtEnd.getText());
