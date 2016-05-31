@@ -6,7 +6,11 @@ import java.awt.event.ActionListener;
 import br.projeto.view.JanelaAvancado;
 
 public class ControllerJanelaAvancado {
-	/*A principal função dessa classe é
+	/**
+	 * @author Daniel
+	 * @see JanelaAvancado
+	 * 
+	 * A principal funÃ§Ã£o dessa classe Ã©
 	 * setar alguns valores nos Txts de sua form e
 	 * zerar os registros do ArrayList do programa*/
 	
