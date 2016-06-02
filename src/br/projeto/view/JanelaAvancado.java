@@ -9,10 +9,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.projeto.controller.ControllerJanelaAvancado;
+
 public class JanelaAvancado extends JFrame{
-	/*Uma das classes menos importantes do programa
-	 * sua principal funÁ„o È apenas mostrar a quantidade de clientes cadastrados no sistema,
-	 * mostrar os lucros da empresa, e dar a opÁ„o para o usu·rio de zerar todos os registros */
+	/**
+	 * @author Daniel
+	 * @see ControllerJanelaAvancado
+	 * 
+	 * Uma das classes menos importantes do programa
+	 * sua principal fun√ß√£o √© apenas mostrar a quantidade de clientes cadastrados no sistema,
+	 * mostrar os lucros da empresa, e dar a op√ß√£o para o usu√°rio de zerar todos os registros */
 	
 	JLabel lblTotalCliente, lblLucro;
 	public JTextField txtTotalCliente, txtLucro;
@@ -20,7 +26,7 @@ public class JanelaAvancado extends JFrame{
 	
 	public JanelaAvancado() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setTitle("AvanÁado");
+		setTitle("Avan√ßado");
 		
 		initComponents();
 		initEvents();
@@ -60,7 +66,7 @@ public class JanelaAvancado extends JFrame{
 		btnResetar = new JButton("Resetar"); //Buttons
 		btnResetar.setBounds(25, 120, 120, 40);
 		btnResetar.setBackground(new Color(240,248,255));
-		btnResetar.setToolTipText("Clique Para Resetar Todos os Registros - Cuidado! Essa AÁ„o N„o Pode Ser Desfeita !");
+		btnResetar.setToolTipText("Clique Para Resetar Todos os Registros - Cuidado! Essa A√ß√£o N√£o Pode Ser Desfeita !");
 		add(btnResetar);
 		
 		btnCancel = new JButton("Cancelar");
