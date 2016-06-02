@@ -4,8 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,16 +18,20 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import br.projeto.controller.ControllerGridCliente;
+
 public class JanelaGridCliente extends JFrame {
 
-	/*Essa janela mostrar· todos os clientes cadastrados no programa
+	/**
+	 * @author Daniel
+	 * @see ControllerGridCliente
+	 * 
+	 * Essa janela mostrar√° todos os clientes cadastrados no programa
 	 * que este, por sua vez, usa um ArrayList como Banco de Dados
-	 * O ArrayList est· localizado no Controller Cadastro com o nome "clientesDB"
+	 * O ArrayList est√° localizado no Controller Cadastro com o nome "clientesDB"
 	 * 
-	 * O ControllerDetCliente tambÈm ter· acesso ao Controller dessa janela, 
-	 * pois È a partir dele que faremos as ediÁıes dos dados dos clientes
-	 * 
-	 * Classe vinculada : ControllerGridCliente*/
+	 * O ControllerDetCliente tamb√©m ter√° acesso ao Controller dessa janela, 
+	 * pois √© a partir dele que faremos as edi√ß√µes dos dados dos clientese*/
 	
 	public JButton btnOk, btnEditar, btnExcluir;
 	JPanel pnlgrid;
@@ -43,14 +45,6 @@ public class JanelaGridCliente extends JFrame {
        
         initComponents();
         initEvents();
-        
-        /*this.addWindowListener( //Fazer a janela iniciar sem selecionar uma linha por default
-        		new WindowAdapter() {
-        			@Override
-        			public void windowOpened(WindowEvent e) {
-        				requestFocus();
-        			}
-        		});*/
  
         setSize(800, 500);
         this.setLocationRelativeTo(null);
@@ -60,12 +54,12 @@ public class JanelaGridCliente extends JFrame {
 
 	private void initComponents() {
 		setLayout(null);
-		getContentPane().setBackground(new Color(30,144,255)); //DodgerBlue
+		getContentPane().setBackground(new Color(30,144,255));
 		
-		//Botıes
+		//Bot√µes
 		btnEditar = new JButton("Editar");
 		btnEditar.setBounds(20, 20, 100, 30);
-		btnEditar.setBackground(new Color (240,248,255)); //AliceBlue
+		btnEditar.setBackground(new Color (240,248,255)); 
 		btnEditar.setToolTipText("Editar dados do cliente selecionado");
 		btnEditar.setEnabled(false);
 		add(btnEditar);
@@ -90,8 +84,13 @@ public class JanelaGridCliente extends JFrame {
 		pnlgrid.setBackground(new Color(30, 144, 255));
 		pnlgrid.setLayout(new BorderLayout());
 		
-		String[] colunas ={"Nome", "EndereÁo", "Telefone"};
-		dtm = new DefaultTableModel(colunas, 0){ //Impossibilitar a seleÁ„o de m˙ltiplas linhas
+		String[] colunas ={"Nome", "Endere√ßo", "Telefone"};
+		dtm = new DefaultTableModel(colunas, 0){ 
+			/**
+			 * @author Daniel
+			 * @param colunas 
+			 * 
+			 * Esse m√©todo tem a fun√ß√£o de mpossibilitar a sele√ß√£o de m√∫ltiplas linhas*/
 			@Override
 			public boolean isCellEditable(int row, int col) {
 					return false;
@@ -101,7 +100,7 @@ public class JanelaGridCliente extends JFrame {
 		grid = new JTable(dtm);
 		grid.setBackground(new Color(240,248,255));
 		
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < colunas.length; i++) {
 			grid.getColumnModel().getColumn(i).setPreferredWidth(200); 
 			grid.getColumnModel().getColumn(i).setResizable(false);
 		}
@@ -110,7 +109,7 @@ public class JanelaGridCliente extends JFrame {
 		DefaultTableCellRenderer alinCentro = new DefaultTableCellRenderer();
 		alinCentro.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < colunas.length; i++) {
 			grid.getColumnModel().getColumn(i).setCellRenderer(alinCentro);
 		}
 		
@@ -130,7 +129,7 @@ public class JanelaGridCliente extends JFrame {
 	
 	private void initEvents(){
 		btnOk.addActionListener(new ActionListener() {	
-			/*fechar janela quando o bot„o for clicado*/
+			/*fechar janela quando o bot√£o for clicado*/
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -138,6 +137,7 @@ public class JanelaGridCliente extends JFrame {
 		});
 		
 		grid.getSelectionModel().addListSelectionListener(
+				/*Pegar linha selecionada*/
 				new ListSelectionListener() {
 
 					@Override
@@ -149,7 +149,7 @@ public class JanelaGridCliente extends JFrame {
 		});
 		
 		grid.getSelectionModel().addListSelectionListener(new ListSelectionListener() { 
-			/*Habilitar botıes sÛ se tiver uma linha selecionada*/
+			/*Habilitar bot√µes s√≥ se tiver uma linha selecionada*/
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
 				ListSelectionModel lsm = (ListSelectionModel) e.getSource();
