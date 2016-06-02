@@ -9,7 +9,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.projeto.controller.ControllerValidacao;
+
 public class FormValidacao extends JFrame {
+	/**
+	 * @author Daniel
+	 * @see ControllerValidacao
+	 * 
+	 * Essa classe serve para fazer a valida√ß√£o de cliente existente no sistema
+	 * do programa
+	 * */
 	
 	JLabel lblNome;
 	public JTextField txtNome;
@@ -17,7 +26,7 @@ public class FormValidacao extends JFrame {
 	
 	public FormValidacao() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setTitle("ValidaÁ„o");
+		setTitle("Valida√ß√£o");
 		
 		iniciarTela();
 		iniciarEventos();
@@ -42,10 +51,10 @@ public class FormValidacao extends JFrame {
 		txtNome.setBackground(new Color(240,248,255));
 		add(txtNome);
 		
-		btnOk = new JButton("Ok");
+		btnOk = new JButton("Ok"); //Bot√µes
 		btnOk.setBounds(40, 100, 114, 30);
 		btnOk.setBackground(new Color(240,248,255));
-		btnOk.setToolTipText("Clique para confirmar a validaÁ„o");
+		btnOk.setToolTipText("Clique para confirmar a valida√ß√£o");
 		add(btnOk);
 		
 		btnCancel = new JButton("Cancel");
@@ -57,7 +66,7 @@ public class FormValidacao extends JFrame {
 	
 	private void iniciarEventos(){
 		
-		btnCancel.addActionListener(new ActionListener() {
+		btnCancel.addActionListener(new ActionListener() { //Fechar
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,7 +75,5 @@ public class FormValidacao extends JFrame {
 		});
 		
 	}
-	
-	
 	
 }
