@@ -9,13 +9,18 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import br.projeto.controller.ControllerPrincipal;
+
 public class JanelaPrincipal extends JFrame{
 	
-	/* A principal funÁ„o dessa classe È apenas mandar a classe PrincipalController 
-	 * chamar outros JFrames atravÈs de ActionListeners nos botıes, onde cada um ir· 
-	 * chamar a classe com o nome correspondente
+	/**
+	 * @author Daniel
+	 * @see ControllerPrincipal
 	 * 
-	 *  Classe Vinculada : ControllerPrincipal*/
+	 * A principal fun√ß√£o dessa classe √© apenas mandar a classe PrincipalController 
+	 * chamar outros JFrames atrav√©s de ActionListeners nos bot√µes, onde cada um ir√° 
+	 * chamar a classe com o nome correspondente
+	 */
 
 	JLabel lblTitulo, lblHora;
 	public JButton btnPedidoRapido, btnCadastrar, btnListaDeClientes, btnAvancado;
@@ -37,28 +42,28 @@ public class JanelaPrincipal extends JFrame{
 	
 	private void iniciarTela(){
 		getContentPane().setLayout(null);
-		getContentPane().setBackground(new Color(30,144,255)); //DodgerBlue
+		getContentPane().setBackground(new Color(30,144,255));
 		
 		lblTitulo = new JLabel("PIZZA ICE");
-		lblTitulo.setForeground(new Color(25,25,112)); //MidnightBlue
+		lblTitulo.setForeground(new Color(25,25,112)); 
 		lblTitulo.setBounds(120,15,100,20);
 		add(lblTitulo);
 		
 		lblHora = new JLabel(formattedDate);
-		lblHora.setForeground(new Color(105,105,105)); //DimGray
+		lblHora.setForeground(new Color(105,105,105));
 		lblHora.setBounds(135, 140, 100, 20);
 		add(lblHora);
 		
-		btnPedidoRapido = new JButton("Pedido R·pido");
-		btnPedidoRapido.setBackground(new Color (240,248,255)); //AliceBlue
+		btnPedidoRapido = new JButton("Pedido R√°pido");
+		btnPedidoRapido.setBackground(new Color (240,248,255));
 		btnPedidoRapido.setBounds(25, 50, 120, 30);
-		btnPedidoRapido.setToolTipText("Selecione Se o Cliente J· Possuir Cadastro");
+		btnPedidoRapido.setToolTipText("Selecione Se o Cliente J√° Possuir Cadastro");
 		add(btnPedidoRapido);
 		
 		btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.setBackground(new Color (240,248,255));
 		btnCadastrar.setBounds(25, 83, 120, 30);
-		btnCadastrar.setToolTipText("Selecione Se o Cliente N„o Possuir Cadastro");
+		btnCadastrar.setToolTipText("Selecione Se o Cliente N√£o Possuir Cadastro");
 		add(btnCadastrar);
 		
 		btnListaDeClientes = new JButton("Clientes");
@@ -67,10 +72,10 @@ public class JanelaPrincipal extends JFrame{
 		btnListaDeClientes.setToolTipText("Selecione Para Ver Todos os Clientes Cadastrados");
 		add(btnListaDeClientes);
 		
-		btnAvancado = new JButton("AvanÁado");
+		btnAvancado = new JButton("Avan√ßado");
 		btnAvancado.setBackground(new Color (240,248,255));
 		btnAvancado.setBounds(148, 83, 120, 30);
-		btnAvancado.setToolTipText("Selecione Para Visualizar o RelatÛrio Da Pizzaria");
+		btnAvancado.setToolTipText("Selecione Para Visualizar o Relat√≥rio Da Pizzaria");
 		add(btnAvancado);	
 	}
 	
