@@ -9,17 +9,18 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 public class FormCadastroCliente extends JFrame {
 	
-	/*Essa classe é uma simples janela onde sua principal função é
-	 * pegar os valores dos seus três campos e armazená-los num ArrayList através
-	 * de seu controller respectivo
+	/**
+	 * @author Daniel
+	 * @see ControllerCadastro
 	 * 
-	 * Classe Vinculada : ControllerCadastro*/
+	 * Essa classe Ã© uma simples janela onde sua principal funÃ§Ã£o Ã©
+	 * pegar os valores dos seus trÃªs campos e armazenÃ¡-los num ArrayList atravÃ©s
+	 * de seu controller respectivo*/
 	
 	JLabel lblNome, lblEnd, lblTel;
 	public JTextField txtNome, txtEnd;
@@ -43,10 +44,10 @@ public class FormCadastroCliente extends JFrame {
 	
 	private void iniciarTela(){
 		getContentPane().setLayout(null);
-		getContentPane().setBackground(new Color(30,144,255)); //DodgerBlue
+		getContentPane().setBackground(new Color(30,144,255));
 		
 		lblNome = new JLabel("Nome:"); //Nome
-		lblNome.setForeground(new Color(240,248,255)); //AliceBlue
+		lblNome.setForeground(new Color(240,248,255));
 		lblNome.setBounds(20, 20, 80, 20);
 		add(lblNome);
 		
@@ -54,7 +55,7 @@ public class FormCadastroCliente extends JFrame {
 		txtNome.setBounds(140, 20, 150, 20);
 		add(txtNome);
 		
-		lblEnd = new JLabel("Endereço:"); //Endereço
+		lblEnd = new JLabel("EndereÃ§o:"); //EndereÃ§o
 		lblEnd.setForeground(new Color (240,248,255));
 		lblEnd.setBounds(20, 50, 100, 20);
 		add(lblEnd);
@@ -98,7 +99,7 @@ public class FormCadastroCliente extends JFrame {
 	}
 	
 	public void iniciarEventos(){
-		btnLimpar.addActionListener(new ActionListener() {
+		btnLimpar.addActionListener(new ActionListener() { //Limpar campos
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				txtNome.setText("");
@@ -107,7 +108,7 @@ public class FormCadastroCliente extends JFrame {
 			}
 		});
 		
-		btnCancelar.addActionListener(new ActionListener() {
+		btnCancelar.addActionListener(new ActionListener() { //Fechar janela
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
