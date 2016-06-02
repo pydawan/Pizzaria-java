@@ -3,8 +3,6 @@ package br.projeto.view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -13,22 +11,23 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.projeto.controller.ControllerPedidoRapido;
 import br.projeto.model.*;
 
 public class FormPedidoRapido extends JFrame {
 	
-	/*Essa classe é uma das mais importantes para o programa
-	 * Sua função é exibir o valor dos itens na tela e armazenar numa variável 
-	 * do cliente através de seu controller respectivo
+	/**
+	 * @author Daniel
+	 * @see ControllerPedidoRapido
 	 * 
-	 * Classe Vinculada: ControllerPedidoRapido*/
+	 * Essa classe é uma das mais importantes para o programa
+	 * Sua função é exibir o valor dos itens na tela e armazenar numa variável 
+	 * do cliente através de seu controller respectivo*/
 	
 	public JLabel lblNome, lblEnd, lblTel;
 	JLabel lblPrecos, lblPizza, lblSuco, lblRefri;
 	public JLabel lblPrecoPizza, lblPrecoSuco, lblPrecoRefri, lblPrecoTotal;
-	public double precoPizza = 0;
-	public double precoRefri = 0;
-	public double precoSuco = 0;
+	public double precoPizza = 0, precoRefri = 0, precoSuco = 0;
 
 	public JComboBox <Pizzas> cmbPizza;
 	public JComboBox <Suco> cmbSuco;
@@ -167,7 +166,7 @@ public class FormPedidoRapido extends JFrame {
 
 	private void iniciarEventos(){
 		
-		btnLimpar.addActionListener(new ActionListener() {
+		btnLimpar.addActionListener(new ActionListener() { //Limpa todos os campos
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -180,7 +179,7 @@ public class FormPedidoRapido extends JFrame {
 			}
 		});
 		
-		btnCancelar.addActionListener(new ActionListener() {
+		btnCancelar.addActionListener(new ActionListener() { //Fecha a janela
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
