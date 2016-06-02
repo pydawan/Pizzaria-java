@@ -13,14 +13,17 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
+import br.projeto.controller.ControllerDetCliente;
+
 public class FormDetCliente extends JDialog{ 
 	
-	/*Essa janela ter· o mesmo layout da tela de cadastro, porÈm ela j· subir· com os dados do cliente
-	 * Quem chamar· ela È o ControllerGridCliente, atravÈs do btnEditar
-	 * Essa janela sÛ ser· chamada quando o que chamar tiver um cliente como par‚metro
+	/**
+	 * @author Daniel
+	 * @see ControllerDetCliente
 	 * 
-	 * Classe Vinculada : ControllerDetCliente
-	 * */
+	 * Essa janela ter√° o mesmo layout da tela de cadastro, por√©m ela j√° subir√° com os dados do cliente
+	 * Quem chamar√° ela √© o ControllerGridCliente, atrav√©s do btnEditar
+	 * Essa janela s√≥ ser√° chamada quando o que chamar tiver um cliente como par√¢metro*/
 
 	JLabel lblNome, lblEnd, lblTel;
 	public JTextField txtNome, txtEnd;
@@ -40,15 +43,14 @@ public class FormDetCliente extends JDialog{
 		setSize(318, 200);
 		setResizable(false);
 		this.setLocationRelativeTo(null);
-		//setVisible(false);
 	}
 	
 	private void iniciarTela(){
 		getContentPane().setLayout(null);
-		getContentPane().setBackground(new Color(30,144,255)); //DodgerBlue
+		getContentPane().setBackground(new Color(30,144,255));
 		
 		lblNome = new JLabel("Nome:"); //Nome
-		lblNome.setForeground(new Color(240,248,255)); //AliceBlue
+		lblNome.setForeground(new Color(240,248,255));
 		lblNome.setBounds(20, 20, 80, 20);
 		add(lblNome);
 		
@@ -56,7 +58,7 @@ public class FormDetCliente extends JDialog{
 		txtNome.setBounds(140, 20, 150, 20);
 		add(txtNome);
 		
-		lblEnd = new JLabel("EndereÁo:"); //EndereÁo
+		lblEnd = new JLabel("Endere√ßo:"); //Endere√ßo
 		lblEnd.setForeground(new Color (240,248,255));
 		lblEnd.setBounds(20, 50, 100, 20);
 		add(lblEnd);
@@ -73,7 +75,6 @@ public class FormDetCliente extends JDialog{
 		try {
 			mskTel = new MaskFormatter("(##) ####-####");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -82,9 +83,9 @@ public class FormDetCliente extends JDialog{
 		add(txtTel);
 		
 		btnOk = new JButton("Ok"); //Buttons
-		btnOk.setBackground(new Color (240,248,255)); //AliceBlue
+		btnOk.setBackground(new Color (240,248,255));
 		btnOk.setBounds(10, 125, 95, 25);
-		btnOk.setToolTipText("Clique para concluir a ediÁ„o");
+		btnOk.setToolTipText("Clique para concluir a edi√ß√£o");
 		add(btnOk);
 		
 		btnLimpar = new JButton("Limpar");
@@ -96,12 +97,12 @@ public class FormDetCliente extends JDialog{
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBackground(new Color (240,248,255));
 		btnCancelar.setBounds(206, 125, 95, 25);
-		btnCancelar.setToolTipText("Clique para cancelar a ediÁ„o");
+		btnCancelar.setToolTipText("Clique para cancelar a edi√ß√£o");
 		add(btnCancelar);
 	}
 	
 	public void iniciarEventos(){
-		btnLimpar.addActionListener(new ActionListener() {
+		btnLimpar.addActionListener(new ActionListener() { //Limpar campos
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				txtNome.setText("");
@@ -110,7 +111,7 @@ public class FormDetCliente extends JDialog{
 			}
 		});
 		
-		btnCancelar.addActionListener(new ActionListener() {
+		btnCancelar.addActionListener(new ActionListener() { //Fechar janela
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
